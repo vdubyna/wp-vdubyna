@@ -16,9 +16,12 @@
             "wp-content/themes/{$name}/": ["type:wordpress-theme"]
         }
     },
-    "post-install-cmd": [
-        "cp -r wp/wp-content/* ./wp-content/",
-        "cp wp/index.php index.php",
-        ""
-    ]
+    "scripts": {
+        "post-install-cmd": [
+            "mkdir -p wp-content && cp -r wp/wp-content/* ./wp-content/"
+        ],
+        "post-update-cmd": [
+            "mkdir -p wp-content && cp -r wp/wp-content/* ./wp-content/"
+        ]
+    }
 }
