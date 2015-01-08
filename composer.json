@@ -7,21 +7,14 @@
         }
     ],
     "require"     : {
-        "johnpbloch/wordpress"            : "4.1"
+        "johnpbloch/wordpress"            : "4.1",
+        "wpackagist-theme/bootstrap-basic": "1.0.3.3"
     },
     "extra"       : {
         "wordpress-install-dir": "wp",
         "installer-paths": {
-            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-            "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+            "wp/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wp/wp-content/themes/{$name}/": ["type:wordpress-theme"]
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "mkdir -p wp-content && cp -r wp/wp-content/* ./wp-content/"
-        ],
-        "post-update-cmd": [
-            "mkdir -p wp-content && cp -r wp/wp-content/* ./wp-content/"
-        ]
     }
 }
